@@ -1,0 +1,2 @@
+.\hex\mergehex -m .\hex\s132_nrf52_6.1.1_softdevice.hex .\hex\nrf52832_xxaa_s132.hex  -o .\hex\softdeviceAndBootLoader.hex
+::.\hex\mergehex -m .\hex\softdeviceAndBootLoader.hex .\hex\tuya_ble_lock_common_nRF52832.hex -o .\hex\tuya_ble_lock_common_nRF52832_merge.hex
