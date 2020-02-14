@@ -1,1 +1,0 @@
-# Tuya_ble_lock_sdk_nRF52832
