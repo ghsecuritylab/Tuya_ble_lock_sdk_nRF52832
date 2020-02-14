@@ -1,4 +1,4 @@
-[中文版](https://github.com/TuyaInc/Tuya_ble_lock_sdk_nRF52832/blob/master/readme-zh.md) | [English](https://github.com/TuyaInc/Tuya_ble_lock_sdk_nRF52832/blob/master/readme.md)
+[中文版](https://github.com/TuyaInc/Tuya_ble_lock_sdk_nRF52832/blob/master/readme-zh.md) | [English](https://github.com/TuyaInc/Tuya_ble_lock_sdk_nRF52832/blob/master)
 
 
 # 1 概述
