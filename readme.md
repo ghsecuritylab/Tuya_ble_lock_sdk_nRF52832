@@ -23,9 +23,7 @@ For details, see *Tuya Common BLE Authorization Product Test Protocol*. The OTA 
 
 &emsp;&emsp;In addition to the main framework and support components, an isolation layer called "app_port" is deployed between the app layer and other layers to improve compatibility of the app layer (involving Tuya components). At the app layer, you can only view bottom-layer APIs (their names start with "app_port") that have been encapsulated at the isolation layer and app layer APIs.
 
-<div align=center>
-    <img src="https://note.youdao.com/yws/res/558/WEBRESOURCE6f9612815a932290f1e7dbbd5074d9e0"> 
-</div>
+<img src="https://airtake-public-data.oss-cn-hangzhou.aliyuncs.com/fe-static/tuya-docs/33386e72-a90e-4a49-9f8e-134ad7032113.png" width = "450"> 
 
 ## 2.1 App
 ### 2.1.1 app_lock
@@ -113,12 +111,12 @@ elog_hexdump(name, width, buf, size);
 ### 3.1.1 Hardware Storage
 &emsp;&emsp;The app layer has implemented the management logic for hardware storage and can store up to 256 hardware devices. A hardware device support one type of door opening methods, and the app layer can store four door opening method types. You can adjust the maximum number of stored door opening methods of each type based on actual requirements. By default, each type supports 10 door opening methods, as shown in the following figure.
 
-![image.png](http://note.youdao.com/yws/res/674/WEBRESOURCE2c28a9f127ec44085cf5a7d441121ea3)
+<img src="https://airtake-public-data.oss-cn-hangzhou.aliyuncs.com/fe-static/tuya-docs/bcd8c6f1-a495-48ae-bfcf-3776ba6c3e80.png" width = "620"> 
 
 ### 3.1.2 Event Storage
 &emsp;&emsp;The app layer has implemented the management logic for event storage and can store "EVTID_MAX" events. You can adjust the maximum number of events that can be stored based on actual requirements. If the size of stored event data exceeds the allocated flash memory size, the flash memory needs to be re-allocated. By default, up to 64 events can be stored, as shown in the following figure.
 
-![image.png](http://note.youdao.com/yws/res/676/WEBRESOURCE77d2a594c1c186af4dbafd4119f44094)
+<img src="https://airtake-public-data.oss-cn-hangzhou.aliyuncs.com/fe-static/tuya-docs/59dc9a28-c7f6-4939-81f6-30d7121d7764.png" width = "500"> 
 
 ### 3.1.3 Settings Storage
 &emsp;&emsp;The app layer has implemented the management logic for settings storage to store setting items related to the door lock. For details, see the "lock_settings_t" structure.
@@ -126,7 +124,7 @@ elog_hexdump(name, width, buf, size);
 &emsp;&emsp;To modify a default door lock setting, modify the related parameter in "lock_settings_default" of the API.
 
 ## 3.2 Bluetooth Data Channel
-![image.png](http://note.youdao.com/yws/res/679/WEBRESOURCEd61b09e64d3d68b156a08fadbdc56f99)
+<img src="https://airtake-public-data.oss-cn-hangzhou.aliyuncs.com/fe-static/tuya-docs/95726426-ed86-4e35-b287-1e88790e21d1.png" width = "620"> 
 
 ## 3.3 DP Parsing
 &emsp;&emsp;The **lock_dp_parser** and **lock_dp_report** files are used for DP parsing based on *Tuya BLE Lock DP Specifications*. These files describe this protocol specification document in C language.
@@ -158,7 +156,7 @@ elog_hexdump(name, width, buf, size);
 
 
 ## 4.2 Demo Project Architecture
-![image.png](http://note.youdao.com/yws/res/689/WEBRESOURCE7c5d5ce1ea415b48362c7c40c958845f)
+<img src="https://airtake-public-data.oss-cn-hangzhou.aliyuncs.com/fe-static/tuya-docs/394d0391-8676-40dd-9350-7afe8aeeef53.png" width = "400"> 
 
 ## 4.3 Firmware Burning
 &emsp;&emsp;Double-click **load_softdevice_bootloader_app.bat** in **\nRF5_SDK_15.3.0_59ac345\examples\ble_peripheral\ble_app_uart\pca10040\s132\arm5_no_packs\hex\**.
@@ -167,20 +165,16 @@ elog_hexdump(name, width, buf, size);
 
 
 ## 4.4 License Application
-&emsp;&emsp;Contact your Tuya business manager and apply for a license based on *Bluetooth Door Lock SDK License Application Process*.
+&emsp;&emsp;Contact your Tuya business manager and apply for a license based on *Bluetooth Door Lock SDK License Application Process*.  
+&emsp;&emsp;For official projects, please use the license applied by the project manager for debugging (re-download the firmware after the chip is completely erased to take effect)!  
+&emsp;&emsp;Product id, authkey, and device id are modified as shown in the following figure:
 
-&emsp;&emsp;The **tuya_ble_storage.c** file in position 1 of the firmware is valid.
-
- ![image.png](http://note.youdao.com/yws/res/694/WEBRESOURCEb53991bd30a8c9401bc446b5cab5855f)
-
-&emsp;&emsp;The **app_common.h** file in position 2 of the firmware is invalid.
-
- ![image.png](http://note.youdao.com/yws/res/697/WEBRESOURCE9d1b8baf6cc00323acbc0eb73e32dd12)
+ <img src="https://airtake-public-data.oss-cn-hangzhou.aliyuncs.com/fe-static/tuya-docs/8dc61510-69c0-4eec-932d-864c08f19328.png" width = "620"> 
 
 
 ## 4.5 OTA Upgrade Process
 1. Modify the firmware version. For details about the firmware version rules, see *Tuya Common BLE SDK Protocol*. The following figure shows the **app_common.h** file.
- ![image.png](http://note.youdao.com/yws/res/700/WEBRESOURCE71f9f7e194c8a88cd9f7726e7c1c6609)
+ <img src="https://airtake-public-data.oss-cn-hangzhou.aliyuncs.com/fe-static/tuya-docs/ad995ca7-7149-4804-a8f8-3772fedaea2f.png" width = "620"> 
 Note: On some platforms, some platform-related key parameters also need to be modified before an OTA upgrade.
 2. Recompile the project.
 Locate the **tuya_ble_lock_common_nRF52832_xx.xx.bin** file in **\nRF5_SDK_15.3.0_59ac345\examples\ble_peripheral\ble_app_uart\pca10040\s132\arm5_no_packs\ota**.
@@ -191,7 +185,7 @@ To check the product's firmware version and virtual ID, do as follows: Open the 
 # 5 Hardware Simulation Using Serial Interface Commands
 &emsp;&emsp;To debug and verify solution feasibility conveniently and quickly, use simple serial interface commands to simulate various hardware door opening methods and other commands.
 ## 5.1 Serial Interface Command Format
-![image.png](http://note.youdao.com/yws/res/719/WEBRESOURCE018873b71aa36b2cecc5ec32c5091e2b)
+<img src="https://airtake-public-data.oss-cn-hangzhou.aliyuncs.com/fe-static/tuya-docs/33c316d4-9bf5-4e28-9cd5-401dd7a64bfb.png" width = "620"> 
 
 - Recording failure causes
   - For details, see the recording failure causes part in section 3.1.1 of *Tuya BLE Lock DP Specifications*.
@@ -215,6 +209,8 @@ To check the product's firmware version and virtual ID, do as follows: Open the 
 3. Double-click **sscom5.13.1.exe** in **\tuya_ble_lock_sdk\tools\uart_simulate_hard\SSCOM**.
 4. Click the **Multi-string** button. Some serial interface commands mentioned in section 5.1 are automatically entered in the right text box of the software.
 5. Set the serial interface baud rate to 9600 bit/s and use serial interface commands to simulate the hardware, as shown in the following figure.
-![image.png](http://note.youdao.com/yws/res/726/WEBRESOURCE91037559f3fd8a317ba835a050c8467c)
+
+<img src="https://airtake-public-data.oss-cn-hangzhou.aliyuncs.com/fe-static/tuya-docs/5837c260-09b5-4a60-9ff2-c184dc6fcc32.png" width = "620"> 
+
 6. Open the TuyaSmart app. Tap the plus sign (+) in the upper right corner and tap **Auto Scan**. Tap **Start Scanning**, select the Tuya common door lock, and tap **Next**. Tap **Add** (optional). Wait until the binding is completed.
 7. Open the Tuya common door lock page and tap **Door Opening with Mobile Phone** to view logs about door opening with the mobile phone. Choose **Door Opening Records** > **Fingerprint** on the serial interface debugging assistant. "fingerprint unlock" is displayed in the TuyaSmart app. Use other functions as needed.
