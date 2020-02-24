@@ -530,21 +530,21 @@ mmon -I..\..\..\..\..\..\components\softdevice\s132\headers -I..\..\..\..\..\..
 ter -I..\..\..\..\..\..\integration\nrfx -I..\..\..\..\..\..\integration\nrfx\l
 egacy -I..\..\..\..\..\..\modules\nrfx -I..\..\..\..\..\..\modules\nrfx\drivers
 \include -I..\..\..\..\..\..\modules\nrfx\hal -I..\..\..\..\..\..\modules\nrfx\
-mdk -I..\config -I.\RTE\_nrf52832_xxaa -IC:\Users\11615\AppData\Local\Arm\Packs
-\ARM\CMSIS\4.5.0\CMSIS\Include -IC:\Users\11615\AppData\Local\Arm\Packs\NordicS
-emiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include -IC:\Keil_v5\ARM\CMSIS\
-Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 528
-" --predefine="_RTE_ SETA 1" --predefine="NRF52 SETA 1" --predefine="BOARD_PCA1
-0040 SETA 1" --predefine="CONFIG_GPIO_AS_PINRESET SETA 1" --predefine="FLOAT_AB
-I_HARD SETA 1" --predefine="NRF52 SETA 1" --predefine="NRF52832_XXAA SETA 1" --
-predefine="NRF52_PAN_74 SETA 1" --predefine="NRF_SD_BLE_API_VERSION SETA 6" --p
-redefine="S132 SETA 1" --predefine="SOFTDEVICE_PRESENT SETA 1" --predefine="SWI
-_DISABLE0 SETA 1" --predefine="__HEAP_SIZE SETA 8192" --predefine="__STACK_SIZE
- SETA 8192" --cpreproc_opts=-DBOARD_PCA10040,-DCONFIG_GPIO_AS_PINRESET,-DFLOAT_
-ABI_HARD,-DNRF52,-DNRF52832_XXAA,-DNRF52_PAN_74,-DNRF_SD_BLE_API_VERSION=6,-DS1
-32,-DSOFTDEVICE_PRESENT,-DSWI_DISABLE0,-D__HEAP_SIZE=8192,-D__STACK_SIZE=8192 -
--list=.\_build\arm_startup_nrf52.lst RTE\Device\nRF52832_xxAA\arm_startup_nrf52
-.s
+mdk -I..\config -I.\RTE\_nrf52832_xxaa -IC:\Users\suding\AppData\Local\Arm\Pack
+s\ARM\CMSIS\4.5.0\CMSIS\Include -IC:\Users\suding\AppData\Local\Arm\Packs\Nordi
+cSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include -IC:\Keil_v5\ARM\CMSI
+S\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 5
+28" --predefine="_RTE_ SETA 1" --predefine="NRF52 SETA 1" --predefine="BOARD_PC
+A10040 SETA 1" --predefine="CONFIG_GPIO_AS_PINRESET SETA 1" --predefine="FLOAT_
+ABI_HARD SETA 1" --predefine="NRF52 SETA 1" --predefine="NRF52832_XXAA SETA 1" 
+--predefine="NRF52_PAN_74 SETA 1" --predefine="NRF_SD_BLE_API_VERSION SETA 6" -
+-predefine="S132 SETA 1" --predefine="SOFTDEVICE_PRESENT SETA 1" --predefine="S
+WI_DISABLE0 SETA 1" --predefine="__HEAP_SIZE SETA 8192" --predefine="__STACK_SI
+ZE SETA 8192" --cpreproc_opts=-DBOARD_PCA10040,-DCONFIG_GPIO_AS_PINRESET,-DFLOA
+T_ABI_HARD,-DNRF52,-DNRF52832_XXAA,-DNRF52_PAN_74,-DNRF_SD_BLE_API_VERSION=6,-D
+S132,-DSOFTDEVICE_PRESENT,-DSWI_DISABLE0,-D__HEAP_SIZE=8192,-D__STACK_SIZE=8192
+ --list=.\_build\arm_startup_nrf52.lst RTE\Device\nRF52832_xxAA\arm_startup_nrf
+52.s
 
 
 
