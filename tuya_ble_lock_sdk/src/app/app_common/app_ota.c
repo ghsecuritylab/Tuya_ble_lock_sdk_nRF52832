@@ -546,6 +546,9 @@ static uint32_t app_ota_end_handler(uint8_t* cmd, uint16_t cmd_size, tuya_ble_ot
         }
         else
         {
+            end_rsp.state = 0x00;
+            s_ota_success = true;
+            APP_DEBUG_PRINTF("ota success");
             {
                 s_dfu_settings.bank_1.image_crc = s_file.crc32;
                 s_dfu_settings.bank_1.image_size = s_file.len;
@@ -555,10 +558,6 @@ static uint32_t app_ota_end_handler(uint8_t* cmd, uint16_t cmd_size, tuya_ble_ot
                 s_dfu_settings.progress.update_start_address = APP_OTA_START_ADDR;
                 app_port_dfu_settings_write_and_backup((nrf_dfu_flash_callback_t)app_ota_setting_write_complete_cb);
             }
-            
-            end_rsp.state = 0x00;
-            s_ota_success = true;
-            APP_DEBUG_PRINTF("ota success");
         }
         app_ota_rsp(rsp, &end_rsp, sizeof(app_ota_end_rsp_t));
         

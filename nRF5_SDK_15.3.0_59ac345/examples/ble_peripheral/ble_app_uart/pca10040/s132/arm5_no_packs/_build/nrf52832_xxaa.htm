@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\_build\nrf52832_xxaa.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\_build\nrf52832_xxaa.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Feb 24 10:38:38 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat Feb 29 18:19:23 2020
 <BR><P>
 <H3>Maximum Stack Usage =       1416 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -546,12 +546,6 @@ Global Symbols
 <LI><a href="#[255]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_settings_default
 <LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_test_process
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HMAC_SHA1
-<LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_md5_init
-<LI><a href="#[289]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_md5_finish_ret
-<LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_aes_init
-<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfs_flash_init
-<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_dfu_settings_init
-<LI><a href="#[1bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 <LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_write
 <LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_hvx_tx_complete
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_connect
@@ -561,6 +555,12 @@ Global Symbols
 <LI><a href="#[2b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_ble_scan_on_adv_report
 <LI><a href="#[2b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_ble_scan_connect_with_target
 <LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;characteristic_add
+<LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_md5_init
+<LI><a href="#[289]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_md5_finish_ret
+<LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_aes_init
+<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfs_flash_init
+<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_dfu_settings_init
+<LI><a href="#[1bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 <LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_nus_init
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bcs_internal_state_reset
 <LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_send
@@ -1816,11 +1816,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sd_nvic_critical_region_enter
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR>[Called By]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_release
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sd_state_evt_handler
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfs_enter_critical
 <LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_port_output_lock
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_release
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sd_state_evt_handler
 <LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_pwr_mgmt_run
 <LI><a href="#[304]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_enable_request
 <LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
@@ -1837,11 +1837,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sd_nvic_irq_disable
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR>[Called By]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_release
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sd_state_evt_handler
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[312]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfs_exit_critical
 <LI><a href="#[201]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_port_output_unlock
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_release
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sd_state_evt_handler
 <LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_pwr_mgmt_run
 <LI><a href="#[304]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_enable_request
 <LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
@@ -3516,8 +3516,8 @@ Global Symbols
 <P><STRONG><a name="[135]"></a>nrf_dfu_settings_init</STRONG> (Thumb, 228 bytes, Stack size 24 bytes, nrf_dfu_settings.o(i.nrf_dfu_settings_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 336<LI>Call Chain = nrf_dfu_settings_init &rArr; nrf_dfu_settings_write_and_backup &rArr; settings_backup &rArr; settings_write &rArr; nrf_dfu_flash_store &rArr; nrf_fstorage_write &rArr; nrf_log_frontend_std_3 &rArr; std_n &rArr;  nrf_log_frontend_dequeue (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_dfu_settings_write_and_backup
-<LI><a href="#[1d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_std_1
+<BR>[Calls]<UL><LI><a href="#[1d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_std_1
+<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_dfu_settings_write_and_backup
 <LI><a href="#[2c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_std_0
 <LI><a href="#[2c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_forbidden_parts_copy_from_backup
 <LI><a href="#[2c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_crc_ok
@@ -3561,9 +3561,9 @@ Global Symbols
 <P><STRONG><a name="[2cc]"></a>nrf_drv_clock_lfclk_release</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, nrf_drv_clock.o(i.nrf_drv_clock_lfclk_release))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = nrf_drv_clock_lfclk_release &rArr; app_util_critical_region_enter &rArr; sd_nvic_critical_region_enter
 </UL>
-<BR>[Calls]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_exit
+<BR>[Calls]<UL><LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfclk_stop
+<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_exit
 <LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_enter
-<LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfclk_stop
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sd_state_evt_handler
 </UL>
@@ -3754,10 +3754,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std_n
 </UL>
-<BR>[Called By]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_dfu_settings_init
-<LI><a href="#[2ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_exchange_mtu_request_evt
+<BR>[Called By]<UL><LI><a href="#[2ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_exchange_mtu_request_evt
 <LI><a href="#[2ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_connected_evt
 <LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_length_update
+<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_dfu_settings_init
 <LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_ble_enable
 <LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_ble_default_cfg_set
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_ble_gatt_on_ble_evt
@@ -3923,9 +3923,9 @@ Global Symbols
 <P><STRONG><a name="[220]"></a>nrf_pwr_mgmt_run</STRONG> (Thumb, 102 bytes, Stack size 8 bytes, nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_run))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = nrf_pwr_mgmt_run &rArr; app_util_critical_region_enter &rArr; sd_nvic_critical_region_enter
 </UL>
-<BR>[Calls]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_exit
+<BR>[Calls]<UL><LI><a href="#[221]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_is_enabled
+<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_exit
 <LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_enter
-<LI><a href="#[221]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_is_enabled
 </UL>
 <BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;idle_state_handle
 </UL>
@@ -6870,11 +6870,11 @@ Local Symbols
 <P><STRONG><a name="[76]"></a>sd_state_evt_handler</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, nrf_drv_clock.o(i.sd_state_evt_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = sd_state_evt_handler &rArr; nrf_drv_clock_init &rArr; nrfx_clock_enable &rArr; nrfx_power_clock_irq_init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_exit
-<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_enter
-<LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_clock_enable
+<BR>[Calls]<UL><LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_clock_enable
 <LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_release
 <LI><a href="#[2c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_init
+<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_exit
+<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_enter
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> nrf_drv_clock.o(sdh_state_observers0)
 </UL>

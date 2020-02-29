@@ -96,6 +96,11 @@ NRF_LOG_MODULE_REGISTER();
     uint8_t m_mbr_params_page[NRF_MBR_PARAMS_PAGE_SIZE]
         __attribute__((at(NRF_MBR_PARAMS_PAGE_ADDRESS)))
         __attribute__((used));
+//add by gyh        
+    uint8_t m_dfu_settings_backup_page[BOOTLOADER_SETTINGS_PAGE_SIZE]
+        __attribute__((at(BOOTLOADER_SETTINGS_BACKUP_ADDRESS)))
+        __attribute__((used));    
+//end add
 
 #elif defined ( __GNUC__ ) || defined ( __SES_ARM )
 
@@ -114,7 +119,8 @@ NRF_LOG_MODULE_REGISTER();
 
 #endif // Compiler specific
 
-uint8_t * mp_dfu_settings_backup_buffer = &m_mbr_params_page[0];
+//uint8_t * mp_dfu_settings_backup_buffer = &m_mbr_params_page[0];
+uint8_t * mp_dfu_settings_backup_buffer = &m_dfu_settings_backup_page[0];
 
 
 #ifndef NRF_DFU_IN_APP
