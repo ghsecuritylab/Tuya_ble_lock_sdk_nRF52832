@@ -123,7 +123,7 @@ uint32_t lock_hard_creat_sub_report_with_delay(uint8_t meth, uint8_t stage, uint
 /*********************************************************
 FN: open lock event record and report
 PM: dp_id - defined in "lock_dp_parser.h"
-    hardid - if dp_id=OR_LOG_OPEN_WITH_BT, then hardid=memberid
+    hardid - if dp_id=OR_LOG_OPEN_WITH_BT/OR_LOG_OPEN_WITH_NOPWD_REMOTE, then hardid=memberid
            - if dp_id=OR_LOG_OPEN_INSIDE,  then hardid=0x00
            - if dp_id=OR_LOG_DOOR_STATE,   then hardid=0x00-close,0x01-open
 */

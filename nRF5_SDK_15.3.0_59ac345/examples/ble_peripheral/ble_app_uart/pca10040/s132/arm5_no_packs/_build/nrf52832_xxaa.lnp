@@ -11,6 +11,8 @@
 ".\_build\app_ota.o"
 ".\_build\app_test.o"
 ".\_build\app_port.o"
+".\_build\tuya_ble_storage.o"
+".\_build\tuya_ble_port_nrf52832.o"
 "..\..\..\..\..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\tuya_ble_sdk_nRF52832.lib"
 ".\_build\cpt_math.o"
 ".\_build\cpt_string_op.o"

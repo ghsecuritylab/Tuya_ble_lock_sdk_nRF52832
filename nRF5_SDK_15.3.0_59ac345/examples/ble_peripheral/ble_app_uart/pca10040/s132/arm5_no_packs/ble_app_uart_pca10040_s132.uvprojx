@@ -483,6 +483,16 @@
               <FilePath>..\..\..\..\..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_config.h</FilePath>
             </File>
             <File>
+              <FileName>tuya_ble_storage.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\src\tuya_ble_storage.c</FilePath>
+            </File>
+            <File>
+              <FileName>tuya_ble_port_nrf52832.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\port\tuya_ble_port_nrf52832.c</FilePath>
+            </File>
+            <File>
               <FileName>tuya_ble_sdk_nRF52832.lib</FileName>
               <FileType>4</FileType>
               <FilePath>..\..\..\..\..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\tuya_ble_sdk_nRF52832.lib</FilePath>
@@ -4442,6 +4452,16 @@
               <FileName>tuya_ble_config.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\..\..\..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>tuya_ble_storage.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\src\tuya_ble_storage.c</FilePath>
+            </File>
+            <File>
+              <FileName>tuya_ble_port_nrf52832.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\port\tuya_ble_port_nrf52832.c</FilePath>
             </File>
             <File>
               <FileName>tuya_ble_sdk_nRF52832.lib</FileName>

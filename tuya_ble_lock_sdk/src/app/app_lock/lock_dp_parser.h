@@ -32,66 +32,66 @@ extern "C"
 //WR-write_report, OW-only_write, OR-only_report
 //BSC-basic, STS-state_sync, SET-setting, RFU-remain_for_future_use
 //PW-password, BT-blue_tooth
-#define  WR_BSC_OPEN_METH_CREATE         1   //基础功能-添加开锁方式
-#define  WR_BSC_OPEN_METH_DELETE         2   //基础功能-删除开锁方式
-#define  WR_BSC_OPEN_METH_MODIFY         3   //基础功能-修改开锁方式
-#define  WR_BSC_OPEN_METH_FREEZE         4   //基础功能-冻结开锁方式
-#define  WR_BSC_OPEN_METH_UNFREEZE       5   //基础功能-解冻开锁方式
-#define  OW_BSC_OPEN_WITH_BT             6   //基础功能-蓝牙开锁
-#define  OR_BSC_OPEN_WITH_BT_REPORT      7   //基础功能-蓝牙开锁反馈，弃用
-#define  OR_STS_BATTERY_PERCENT          8   //状态同步-电量百分比
-#define  OR_STS_BATTERY_POSITION         9   //状态同步-电量档位
-#define  OR_STS_CHILD_LOCK               10  //状态同步-童锁
-#define  OR_STS_ANTI_LOCK                11  //状态同步-上提反锁
-#define  OR_LOG_OPEN_WITH_FINGER         12  //开锁记录-指纹
-#define  OR_LOG_OPEN_WITH_PW             13  //开锁记录-普通密码
-#define  OR_LOG_OPEN_WITH_DYNAMIC_PW     14  //开锁记录-动态密码
-#define  OR_LOG_OPEN_WITH_CARD           15  //开锁记录-门卡
-#define  OR_LOG_OPEN_WITH_KEY            16  //开锁记录-机械钥匙
-#define  OR_LOG_DOOR_STATE               17  //开锁记录-门的状态    //?
-#define  OR_LOG_OPEN_INSIDE              18  //开锁记录-门从内侧打开
-#define  OR_LOG_OPEN_WITH_BT             19  //开锁记录-蓝牙开锁
-#define  OR_RFU_DOOR_OPENED              20  //未被使用-门被打开
-#define  OR_LOG_ALARM_REASON             21  //警报记录-各种
-#define  OR_LOG_ALARM_HIJACK             22  //警报记录-劫持报警
-#define  OR_RFU_ALARM_LOW_POWER          23  //未被使用-低电报警
-#define  OR_STS_DOORBELL_RING            24  //状态同步-门铃提醒
-#define  WR_SET_MESSAGE_SWITCH           25  //锁的设置-短信通知
-#define  WR_SET_DOOR_BELL                26  //锁的设置-门铃音效
-#define  WR_SET_LOCK_VOLUME              27  //锁的设置-锁的音量
-#define  WR_SET_LOCK_LANGUAGE            28  //锁的设置-锁的语言切换
-#define  WR_SET_WELCOME_WORDS            29  //锁的设置-显示屏欢迎词
-#define  WR_SET_KEY_TONE                 30  //锁的设置-按键音调
-#define  WR_SET_NAVIGATE_VOLUME          31  //锁的设置-锁的本地导航音量
-#define  WR_STS_REVERSE_LOCK             32  //状态同步-反锁状态
-#define  WR_SET_AUTO_LOCK_SWITCH         33  //锁的设置-自动落锁开关
-#define  WR_SET_COMBINE_LOCK             34  //锁的设置-单一开锁与组合开锁切换
-#define  WR_BSC_OPEN_METH_SYNC           35  //基础功能-同步开锁方式
-#define  WR_SET_TIMER_LOCK               36  //锁的设置-定时落锁
-#define  WR_SET_TIMER_AUTO_LOCK          37  //锁的设置-定时自动落锁
-#define  WR_SET_FINGER_NUM               38  //锁的设置-指纹录入次数
-#define  OR_LOG_OPEN_WITH_FACE           39  //开锁记录-人脸
-#define  OR_STS_DOOR_STATE               40  //状态同步-门开合状态
-#define  OR_LOG_OPEN_WITH_EYE            41  //开锁记录-虹膜
-#define  OR_LOG_OPEN_WITH_PALM_PRINT     42  //开锁记录-掌纹
-#define  OR_LOG_OPEN_WITH_FINGER_VEIN    43  //开锁记录-指静脉
-#define  OR_STS_AUTH_LOCK_OUTTIME        45  //状态同步-自动落锁倒计时
-#define  WR_SET_HAND_LOCK                46  //锁的设置-手动落锁
-#define  OR_STS_LOCK_STATE               47  //状态同步-锁开合状态
-#define  WR_SET_MOTOR_DIRECTION          48  //锁的设置-锁贴电机转动方向
-#define  WR_SET_USER_FREEZE              49  //锁的设置-解冻用户
-#define  WR_SET_USER_UNFREEZE            50  //锁的设置-冻结用户
-#define  WR_BSC_TEMP_PW_CREAT            51  //基础功能-添加临时密码
-#define  WR_BSC_TEMP_PW_DELETE           52  //基础功能-删除临时密码
-#define  WR_BSC_TEMP_PW_MODIFY           53  //基础功能-修改临时密码
-#define  WR_BSC_OPEN_METH_SYNC_NEW       54  //基础功能-同步开锁方式（数据量大）
-#define  OR_LOG_OPEN_WITH_TMP_PWD        55  //开锁记录-临时密码
-#define  OR_LOG_OPEN_WITH_OFFLINE_PWD    56  //开锁记录-离线密码
-#define  OR_LOG_OPEN_WITH_COMBINE        57  //开锁记录-组合开锁
-#define  OR_LOG_OPEN_WITH_NOPWD_REMOTE   58  //开锁记录-免密远程开锁
-#define  WR_SET_MOTOR_TORQUE             59  //锁的设置-电机扭力
-#define  WR_BSC_SET_NOPWD_REMOTE_KEY     60  //基础功能-设置免密远程开锁密钥
-#define  WR_BSC_OPEN_WITH_NOPWD_REMOTE   61  //基础功能-免密远程开锁
+#define  WR_BSC_OPEN_METH_CREATE                  1   //基础功能-添加开锁方式
+#define  WR_BSC_OPEN_METH_DELETE                  2   //基础功能-删除开锁方式
+#define  WR_BSC_OPEN_METH_MODIFY                  3   //基础功能-修改开锁方式
+#define  WR_BSC_OPEN_METH_FREEZE                  4   //基础功能-冻结开锁方式
+#define  WR_BSC_OPEN_METH_UNFREEZE                5   //基础功能-解冻开锁方式
+#define  OW_BSC_OPEN_WITH_BT                      6   //基础功能-蓝牙开锁
+#define  OR_BSC_OPEN_WITH_BT_REPORT               7   //基础功能-蓝牙开锁反馈，弃用
+#define  OR_STS_BATTERY_PERCENT                   8   //状态同步-电量百分比
+#define  OR_STS_BATTERY_POSITION                  9   //状态同步-电量档位
+#define  OR_STS_CHILD_LOCK                        10  //状态同步-童锁
+#define  OR_STS_ANTI_LOCK                         11  //状态同步-上提反锁
+#define  OR_LOG_OPEN_WITH_FINGER                  12  //开锁记录-指纹
+#define  OR_LOG_OPEN_WITH_PW                      13  //开锁记录-普通密码
+#define  OR_LOG_OPEN_WITH_DYNAMIC_PW              14  //开锁记录-动态密码
+#define  OR_LOG_OPEN_WITH_CARD                    15  //开锁记录-门卡
+#define  OR_LOG_OPEN_WITH_KEY                     16  //开锁记录-机械钥匙
+#define  OR_LOG_DOOR_STATE                        17  //开锁记录-门的状态    //?
+#define  OR_LOG_OPEN_INSIDE                       18  //开锁记录-门从内侧打开
+#define  OR_LOG_OPEN_WITH_BT                      19  //开锁记录-蓝牙开锁
+#define  OR_RFU_DOOR_OPENED                       20  //未被使用-门被打开
+#define  OR_LOG_ALARM_REASON                      21  //警报记录-各种
+#define  OR_LOG_ALARM_HIJACK                      22  //警报记录-劫持报警
+#define  OR_RFU_ALARM_LOW_POWER                   23  //未被使用-低电报警
+#define  OR_STS_DOORBELL_RING                     24  //状态同步-门铃提醒
+#define  WR_SET_MESSAGE_SWITCH                    25  //锁的设置-短信通知
+#define  WR_SET_DOOR_BELL                         26  //锁的设置-门铃音效
+#define  WR_SET_LOCK_VOLUME                       27  //锁的设置-锁的音量
+#define  WR_SET_LOCK_LANGUAGE                     28  //锁的设置-锁的语言切换
+#define  WR_SET_WELCOME_WORDS                     29  //锁的设置-显示屏欢迎词
+#define  WR_SET_KEY_TONE                          30  //锁的设置-按键音调
+#define  WR_SET_NAVIGATE_VOLUME                   31  //锁的设置-锁的本地导航音量
+#define  WR_STS_REVERSE_LOCK                      32  //状态同步-反锁状态
+#define  WR_SET_AUTO_LOCK_SWITCH                  33  //锁的设置-自动落锁开关
+#define  WR_SET_COMBINE_LOCK                      34  //锁的设置-单一开锁与组合开锁切换
+#define  WR_BSC_OPEN_METH_SYNC                    35  //基础功能-同步开锁方式
+#define  WR_SET_TIMER_LOCK                        36  //锁的设置-定时落锁
+#define  WR_SET_TIMER_AUTO_LOCK                   37  //锁的设置-定时自动落锁
+#define  WR_SET_FINGER_NUM                        38  //锁的设置-指纹录入次数
+#define  OR_LOG_OPEN_WITH_FACE                    39  //开锁记录-人脸
+#define  OR_STS_DOOR_STATE                        40  //状态同步-门开合状态
+#define  OR_LOG_OPEN_WITH_EYE                     41  //开锁记录-虹膜
+#define  OR_LOG_OPEN_WITH_PALM_PRINT              42  //开锁记录-掌纹
+#define  OR_LOG_OPEN_WITH_FINGER_VEIN             43  //开锁记录-指静脉
+#define  OR_STS_AUTH_LOCK_OUTTIME                 45  //状态同步-自动落锁倒计时
+#define  WR_SET_HAND_LOCK                         46  //锁的设置-手动落锁
+#define  OR_STS_LOCK_STATE                        47  //状态同步-锁开合状态
+#define  WR_SET_MOTOR_DIRECTION                   48  //锁的设置-锁贴电机转动方向
+#define  WR_SET_USER_FREEZE                       49  //锁的设置-解冻用户
+#define  WR_SET_USER_UNFREEZE                     50  //锁的设置-冻结用户
+#define  WR_BSC_TEMP_PW_CREAT                     51  //基础功能-添加临时密码
+#define  WR_BSC_TEMP_PW_DELETE                    52  //基础功能-删除临时密码
+#define  WR_BSC_TEMP_PW_MODIFY                    53  //基础功能-修改临时密码
+#define  WR_BSC_OPEN_METH_SYNC_NEW                54  //基础功能-同步开锁方式（数据量大）
+#define  OR_LOG_OPEN_WITH_TMP_PWD                 55  //开锁记录-临时密码
+#define  OR_LOG_OPEN_WITH_OFFLINE_PWD             56  //开锁记录-离线密码
+#define  OR_LOG_OPEN_WITH_COMBINE                 57  //开锁记录-组合开锁
+#define  OR_LOG_OPEN_WITH_NOPWD_REMOTE            58  //开锁记录-免密远程开锁
+#define  WR_SET_MOTOR_TORQUE                      59  //锁的设置-电机扭力
+#define  WR_BSC_OPEN_WITH_NOPWD_REMOTE_SETKEY     60  //基础功能-设置免密远程开锁密钥
+#define  WR_BSC_OPEN_WITH_NOPWD_REMOTE            61  //基础功能-免密远程开锁
 
 
 //open method
@@ -278,6 +278,35 @@ typedef struct
     uint8_t hardid;
     uint8_t result;
 } temp_pw_modify_result_t;
+
+//open with nopwd remote setkey
+typedef struct
+{
+    uint8_t  valid;
+    uint16_t memberid;
+    uint32_t time_begin;
+    uint32_t time_end;
+    uint16_t valid_num;
+    uint8_t  password[8];
+} open_with_nopwd_remote_setkey_t;
+typedef struct
+{
+    uint8_t  result;
+    uint16_t memberid;
+} open_with_nopwd_remote_setkey_result_t;
+
+//open with nopwd remote
+typedef struct
+{
+    uint8_t  open;
+    uint16_t memberid;
+    uint8_t  password[8];
+} open_with_nopwd_remote_t;
+typedef struct
+{
+    uint8_t  result;
+    uint16_t memberid;
+} open_with_nopwd_remote_result_t;
 
 //sync open method
 // - hard_attribute

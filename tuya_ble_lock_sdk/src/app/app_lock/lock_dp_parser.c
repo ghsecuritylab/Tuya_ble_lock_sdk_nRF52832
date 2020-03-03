@@ -29,6 +29,8 @@ static uint32_t open_meth_sync_new_handler(uint8_t cmd_dp_data_len, void* cmd_dp
 static uint32_t temp_pw_creat_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len);
 static uint32_t temp_pw_delete_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len);
 static uint32_t temp_pw_modify_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len);
+static uint32_t open_with_nopwd_remote_setkey_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len);
+static uint32_t open_with_nopwd_remote_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len);
 
 /*********************************************************************
  * VARIABLES
@@ -280,6 +282,14 @@ uint32_t lock_dp_parser_handler(void* dp_data)
         
         case WR_BSC_TEMP_PW_MODIFY: {
             temp_pw_modify_handler(g_cmd.dp_data, g_rsp.dp_data, &g_rsp.dp_data_len);
+        } break;
+        
+        case WR_BSC_OPEN_WITH_NOPWD_REMOTE_SETKEY: {
+            open_with_nopwd_remote_setkey_handler(g_cmd.dp_data, g_rsp.dp_data, &g_rsp.dp_data_len);
+        } break;
+        
+        case WR_BSC_OPEN_WITH_NOPWD_REMOTE: {
+            open_with_nopwd_remote_handler(g_cmd.dp_data, g_rsp.dp_data, &g_rsp.dp_data_len);
         } break;
         
         default: {
@@ -835,7 +845,78 @@ static uint32_t temp_pw_modify_handler(void* cmd_dp_data, void* rsp_dp_data, uin
     return APP_PORT_SUCCESS;
 }
 
+/*********************************************************
+FN: 
+*/
+#define OPEN_WITH_NOPWD_REMOTE_KEY "nopwd_remote"
+static uint32_t open_with_nopwd_remote_setkey_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len)
+{
+    open_with_nopwd_remote_setkey_t* cmd = cmd_dp_data;
+    open_with_nopwd_remote_setkey_result_t* rsp = rsp_dp_data;
+    uint8_t* rsp_len = rsp_dp_data_len;
+    uint8_t ret = APP_PORT_SUCCESS;
+    
+    rsp->memberid = cmd->memberid;
+    
+    ret = app_port_kv_set(OPEN_WITH_NOPWD_REMOTE_KEY, cmd, sizeof(open_with_nopwd_remote_setkey_t));
+    if(ret == APP_PORT_SUCCESS) {
+        rsp->result = 0x00;
+    } else {
+        rsp->result = 0x01;
+    }
+    
+    *rsp_len = sizeof(open_with_nopwd_remote_setkey_result_t);
+    
+    return APP_PORT_SUCCESS;
+}
 
+/*********************************************************
+FN: 
+*/
+static uint32_t open_with_nopwd_remote_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len)
+{
+    open_with_nopwd_remote_t* cmd = cmd_dp_data;
+    open_with_nopwd_remote_result_t* rsp = rsp_dp_data;
+    uint8_t* rsp_len = rsp_dp_data_len;
+    
+    rsp->memberid = cmd->memberid;
+    
+    uint32_t timestamp = app_port_get_timestamp();
+    
+    open_with_nopwd_remote_setkey_t set_cmd;
+    app_port_kv_get(OPEN_WITH_NOPWD_REMOTE_KEY, &set_cmd, sizeof(open_with_nopwd_remote_setkey_t));
+    
+    if(!set_cmd.valid) {
+        rsp->result = 0x02;
+        APP_DEBUG_PRINTF("OPEN_WITH_NOPWD_REMOTE fail id: %d", rsp->result);
+    } 
+    else if(!(set_cmd.valid_num > 0)) {
+        rsp->result = 0x03;
+        APP_DEBUG_PRINTF("OPEN_WITH_NOPWD_REMOTE fail id: %d", rsp->result);
+    }
+    else if(!((timestamp >= set_cmd.time_begin) && (timestamp <= set_cmd.time_end))) {
+        rsp->result = 0x04;
+        APP_DEBUG_PRINTF("OPEN_WITH_NOPWD_REMOTE fail id: %d", rsp->result);
+    }
+    else if(!(0 == memcmp(cmd->password, set_cmd.password, 8))) {
+        rsp->result = 0x05;
+        APP_DEBUG_PRINTF("OPEN_WITH_NOPWD_REMOTE fail id: %d", rsp->result);
+    }
+    else {
+        APP_DEBUG_PRINTF("OPEN_WITH_NOPWD_REMOTE success");
+        
+        lock_open_record_report(OR_LOG_OPEN_WITH_NOPWD_REMOTE, set_cmd.memberid);
+        
+        set_cmd.valid_num--;
+        app_port_kv_set(OPEN_WITH_NOPWD_REMOTE_KEY, &set_cmd, sizeof(open_with_nopwd_remote_setkey_t));
+        
+        rsp->result = 0x00;
+    }
+    
+    *rsp_len = sizeof(open_with_nopwd_remote_result_t);
+    
+    return APP_PORT_SUCCESS;
+}
 
 
 

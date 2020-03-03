@@ -22,6 +22,7 @@
 /*********************************************************************
  * VARIABLES
  */
+uint8_t g_open_with_bt_flag = 1;
 
 
 
@@ -63,12 +64,12 @@ FN:
 uint32_t lock_open_with_bt(void)
 {
     //open success
-    if(1)
+    if(g_open_with_bt_flag)
     {
         APP_DEBUG_PRINTF("lock_open_with_bt");
         return APP_PORT_SUCCESS;
     }
-//    return APP_PORT_ERROR_COMMON;
+    return APP_PORT_ERROR_COMMON;
 }
 
 /*********************************************************
